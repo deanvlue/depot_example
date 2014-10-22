@@ -1,0 +1,19 @@
+<% if notice %>
+  <p id="notice"><%= notice %></p>
+<% end %>
+
+<h1>Catalogo</h1>
+
+<% @products.each do |product| %>
+  <div class="entry">
+    <%= image_tag(product.image_url) %>
+    <h3><%= product.title%></h3>
+    <%= sanitize(product.description)%>
+    <div class="price_line">
+      <span class="price"> <%= sprintf("%0.03f mBTC", product.price) %>  </span>
+      <span class="price"> <%= sprintf("$%0.03f MXN", product.price) %>  </span>
+    </div><!--price_line-->
+
+  </div>  <!--entry-->
+
+<% end %>
