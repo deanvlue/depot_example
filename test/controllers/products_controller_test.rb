@@ -20,6 +20,23 @@ class ProductsControllerTest < ActionController::TestCase
     assert product.errors[:image_url].any?
   end
 
+<<<<<<< HEAD
+=======
+  test "product price must be positive" do
+    product = Product.new(title: "My book title",
+                         description: "yyy",
+                         image_url: "zzz.jpg")
+    product.price=-1
+    assert product.invalid?
+    assert_equal "must be greater or equal than 0.01", product.errors[:price].join('; ')
+    product.price=0
+    assert product.invalid?
+    assert_equal "must be greater than or equal to 0.01", product.errors[:price].join('; ')
+    product.price=1
+    assert product.valid?
+  end
+
+>>>>>>> 708923a163fa30507ffab6218f8c6b284f19b137
   test "should get index" do
     get :index
     assert_response :success

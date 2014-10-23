@@ -2,11 +2,17 @@
   <p id="notice"><%= notice %></p>
 <% end %>
 
+<<<<<<< HEAD
 <h1>Catalago</h1>
+=======
+<h1>Catalogo</h1>
+
+>>>>>>> 708923a163fa30507ffab6218f8c6b284f19b137
 <% @products.each do |product| %>
   <div class="entry">
     <%= image_tag(product.image_url) %>
     <h3><%= product.title%></h3>
+<<<<<<< HEAD
     <%= sanitize product.description %>
     <div class="price_line">
       <span class="price"><%= product.price %></span>
@@ -15,3 +21,14 @@
 <% end %>
 
 
+=======
+    <%= sanitize(product.description)%>
+    <div class="price_line">
+      <span class="price"> <%= number_to_currency product.price %>  </span>
+      <span class="price"> <%= sprintf("$%0.03f MXN", product.price) %>  </span>
+    </div><!--price_line-->
+
+  </div>  <!--entry-->
+
+<% end %>
+>>>>>>> 708923a163fa30507ffab6218f8c6b284f19b137
