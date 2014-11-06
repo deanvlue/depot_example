@@ -10,6 +10,11 @@ class CartsController < ApplicationController
   # GET /carts/1
   # GET /carts/1.json
   def show
+    if session[:counter].nil?
+      session[:counter]=0
+    else
+      session[:counter]=session[:counter]+1
+    end
   end
 
   # GET /carts/new
@@ -44,6 +49,7 @@ class CartsController < ApplicationController
       if @cart.update(cart_params)
         format.html { redirect_to @cart, notice: 'Cart was successfully updated.' }
         format.json { render :show, status: :ok, location: @cart }
+        @counter=0
       else
         format.html { render :edit }
         format.json { render json: @cart.errors, status: :unprocessable_entity }

@@ -3,6 +3,7 @@
   
 <% end %>
 <h2>tottem</h2>
+<h4><%= session[:counter] %>   </h4> 
 <ul>
 <% @cart.line_items.each do |item| %>
   <li><%= item.product.title %></li>
