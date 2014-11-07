@@ -10,11 +10,7 @@ class CartsController < ApplicationController
   # GET /carts/1
   # GET /carts/1.json
   def show
-    if session[:counter].nil?
-      session[:counter]=0
-    else
-      session[:counter]+=1
-    end
+  
   end
 
   # GET /carts/new
@@ -69,7 +65,17 @@ class CartsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_cart
-      @cart = Cart.find(params[:id])
+      begin
+        @cart = Cart.find(params[:id])
+      rescue ActiveRecord::RecordNotFound
+        logger.error "Intento de ingresar a un carro que no existe #{params[:id]}"
+        redirect_to store_url, notice: 'tssh tssh tshh, chavo, ese fue Invalido'
+      else
+        respond_to do | format |
+          format.html # debe de redireccionar
+          format.json {render json: @cart}
+        end
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
