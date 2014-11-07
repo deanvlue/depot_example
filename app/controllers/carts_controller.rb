@@ -13,7 +13,7 @@ class CartsController < ApplicationController
     if session[:counter].nil?
       session[:counter]=0
     else
-      session[:counter]=session[:counter]+1
+      session[:counter]+=1
     end
   end
 
@@ -30,7 +30,6 @@ class CartsController < ApplicationController
   # POST /carts.json
   def create
     @cart = Cart.new(cart_params)
-
     respond_to do |format|
       if @cart.save
         format.html { redirect_to @cart, notice: 'Cart was successfully created.' }
