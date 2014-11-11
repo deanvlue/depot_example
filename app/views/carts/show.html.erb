@@ -9,3 +9,5 @@
   <li><%= item.quantity %> &times;  <%= item.product.title %></li>
 <% end %>
 </ul>
+
+<%= button_to 'Empty Cart', @cart, method: :delete, confirm: 'Seguro?' %>
