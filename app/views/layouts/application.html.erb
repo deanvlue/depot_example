@@ -1,31 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>PragProgBooks online Depot</title>
+  <title>Depot</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body class='<%= controller.controller_name %>'>
-  <div id="banner">
-      <%= image_tag("logo.png")%>
-      <%= @page_title || "Bookshelf" %>
-  </div><!--banner-->
+<body>
 
-  <div id="columns">
-    <div id="side">
-      <ul>
-        <li><%= link_to 'HOME', store_path %></li>
-        <li><a href="#">FAQ</a></li>
-        <li><a href="#">NEWS</a></li>
-        <li><a href="#">CONTACT</a></li>
-      </ul>
-    </div><!--side-->
-    <div id="main">
-      <%= yield %>
-    </div><!--main-->
-  </div><!--columns-->
+<%= yield %>
 
 </body>
-
 </html>

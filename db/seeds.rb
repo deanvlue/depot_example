@@ -1,45 +1,37 @@
-#---
-# Excerpted from "Agile Web Development with Rails",
-# published by The Pragmatic Bookshelf.
-# Copyrights apply to this code. It may not be used to create training material, 
-# courses, books, articles, and the like. Contact us if you are in doubt.
-# We make no guarantees that this code is fit for any purpose. 
-# Visit http://www.pragmaticprogrammer.com/titles/rails4 for more book information.
-#---
-# encoding: utf-8
-Product.delete_all
-Product.create(title: 'CoffeeScript',
-  description: 
-    %{<p>
-        CoffeeScript is JavaScript done right. It provides all of JavaScript's
-	functionality wrapped in a cleaner, more succinct syntax. In the first
-	book on this exciting new language, CoffeeScript guru Trevor Burnham
-	shows you how to hold onto all the power and flexibility of JavaScript
-	while writing clearer, cleaner, and safer code.
-      </p>},
-  image_url:   'cs.jpg',    
-  price: 36.00)
-# . . .
-Product.create(title: 'Programming Ruby 1.9',
-  description:
-    %{<p>
-        Ruby is the fastest growing and most exciting dynamic language
-        out there. If you need to get working programs delivered fast,
-        you should add Ruby to your toolbox.
-      </p>},
-  image_url: 'ruby.jpg',
-  price: 49.95)
-# . . .
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-Product.create(title: 'Rails Test Prescriptions',
-  description: 
-    %{<p>
-        <em>Rails Test Prescriptions</em> is a comprehensive guide to testing
-        Rails applications, covering Test-Driven Development from both a
-        theoretical perspective (why to test) and from a practical perspective
-        (how to test effectively). It covers the core Rails testing tools and
-        procedures for Rails 2 and Rails 3, and introduces popular add-ons,
-        including Cucumber, Shoulda, Machinist, Mocha, and Rcov.
-      </p>},
-  image_url: 'rtp.jpg',
-  price: 34.95)
+<!--//////////////////////////////////////////////////////////////////////////
+//
+//    Copyright (c) 1996 - 2014, Websense, Inc.    All Rights Reserved
+//    See WebsenseCopyright.txt for copyright information
+//
+///////////////////////////////////////////////////////////////////////////-->
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Access to this site is blocked</title>
+<link rel="stylesheet" href="/en/Default/master.css" type="text/css">
+<script type="text/javascript" language="javascript" src="/en/Default/master.js"></script>
+<script type="text/javascript" language="javascript" src="/en/Default/base64.js"></script>
+<script type="text/javascript" language="javascript" src="/en/Default/security.js"></script>
+</head>
+<body>
+
+<!--[if lt IE 7]> <div style="width: 725px;"> <![endif]-->
+<div style="border: 1px solid #285EA6;width: 95%; max-width: 700px; overflow: hidden; margin-left: 10px; background-color: #EEF2F7;">
+	<iframe src="http://192.168.102.39:15871/cgi-bin/block_message.cgi?ws-session=1208178831" title="test" name="ws_block" frameborder="0" scrolling="auto" style="width:100%; height: 10em;">
+
+	</iframe>
+	<iframe src="http://192.168.102.39:15871/cgi-bin/blockOptions.cgi?ws-session=1208178831" name="ws_blockoption" frameborder="0" scrolling="auto" style="width:100%; height: 17.5em;">
+		<p>To enable further options, view this page with a browser that supports iframes</p>
+	</iframe>
+	<div><img title="Websense" src="/Images/wslogo_block_page.png" alt="Websense Logo" style="float: right;clear: both;margin: 0px 10px 6px 0px; padding: 2px 0px;">
+		<div style="clear: both; overflow: hidden; height:1px;"></div>
+	</div>
+</div>
+<!--[if lt IE 7]> </div> <![endif]-->
+<div id="light" class="white_content"></div>
+<div id="fade" class="black_overlay"></div>
+</body>
+</html>

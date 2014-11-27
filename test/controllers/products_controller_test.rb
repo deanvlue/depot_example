@@ -3,35 +3,6 @@ require 'test_helper'
 class ProductsControllerTest < ActionController::TestCase
   setup do
     @product = products(:one)
-    @update = {
-      title: 'Lorem Ipsum',
-      description: 'Wibbles are fun',
-      image_url: 'lorem.jpg',
-      price: 19.95
-    }
-  end
-
-  test "product attributes must not be empty" do
-    product = Product.new
-    assert product.invalid?
-    assert product.errors[:title].any?
-    assert product.errors[:description].any?
-    assert product.errors[:price].any?
-    assert product.errors[:image_url].any?
-  end
-
-  test "product price must be positive" do
-    product = Product.new(title: "My book title",
-                         description: "yyy",
-                         image_url: "zzz.jpg")
-    product.price=-1
-    assert product.invalid?
-    assert_equal "must be greater or equal than 0.01", product.errors[:price].join('; ')
-    product.price=0
-    assert product.invalid?
-    assert_equal "must be greater than or equal to 0.01", product.errors[:price].join('; ')
-    product.price=1
-    assert product.valid?
   end
 
   test "should get index" do
@@ -47,7 +18,7 @@ class ProductsControllerTest < ActionController::TestCase
 
   test "should create product" do
     assert_difference('Product.count') do
-      post :create,  product: @update
+      post :create, product: { description: @product.description, image_url: @product.image_url, price: @product.price, title: @product.title }
     end
 
     assert_redirected_to product_path(assigns(:product))
@@ -64,7 +35,7 @@ class ProductsControllerTest < ActionController::TestCase
   end
 
   test "should update product" do
-    put :update, id: @product.to_param, product: @update
+    patch :update, id: @product, product: { description: @product.description, image_url: @product.image_url, price: @product.price, title: @product.title }
     assert_redirected_to product_path(assigns(:product))
   end
 
