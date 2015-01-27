@@ -11,6 +11,15 @@ class ProductsControllerTest < ActionController::TestCase
     }
   end
 
+  test "product attributes must not be empty" do
+    product = Product.new
+    assert product.invalid?
+    assert product.errors[:title].any?
+    assert product.errors[:description].any?
+    assert product.errors[:price].any?
+    assert product.errors[:image_url].any?
+  end
+
   test "should get index" do
     get :index
     assert_response :success
