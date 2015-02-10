@@ -11,3 +11,9 @@ two:
   description: MyText
   image_url: MyString
   price: 9.99
+
+ruby:
+  title: Programming Ruby 2.4
+  description: Ruby is the fastes growing and more dynamic and exciting language out there. if you need to get working programs delivered fast, you should add ruby to your toolbox
+  price: 49.50
+  image_url: ruby.png
