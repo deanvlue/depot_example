@@ -40,8 +40,8 @@ class ProductTest < ActiveSupport::TestCase
   end
 
   test "image url" do
-    ok = %w{ fred.gif fred.jpg fred.png FRED.JPG FRED.Jpg http://a.b.c/x/y/z/fred.gif }
-    bad = %w{ fred.doc fred.gif/more fred.gif.more fred.exe fred.cgi fred.dll}
+    ok = %w{fred.jpg fred.png FRED.JPG FRED.Jpg http://a.b.c/x/y/z/fred.gif fred.gif}
+    bad = %w{fred.doc fred.gif/more fred.gif.more fred.exe fred.cgi fred.dll}
 
     ok.each do |name|
       assert new_product(name).valid?, "#{name} should be valid"
@@ -59,8 +59,8 @@ class ProductTest < ActiveSupport::TestCase
           price: 1,
           image_url: "fred.gif"
       )
-      assert.product.invalid?
-      assert_equal [" has already been taken"], product.errors[:title]
+      assert product.invalid?
+      assert_equal ["has already been taken"], product.errors[:title]
   end
 
 
